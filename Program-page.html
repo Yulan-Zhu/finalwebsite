@@ -54,16 +54,34 @@
   </div>
 </header><!-- End Header -->
 
+<main id="main1">
 
-  <main id="main">
-
-    <section class="inner-page" id="yuanxiao-section">
-      <div class="section-title">
-        <h2>专业<span>分类</span></h2>
-            <p>点击下列分类查看不同专业，查看详细信息可点击具体专业</p>
+  <section class="inner-page" id="yuanxiao-section">
+    <div class="section-title">
+      <h2>所有地区<span>专业分类</span></h2>
+          <p>点击下方图表查看不同专业的申请截止日期与学校排名对比</p>
+  <!--Graph-->
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <br>点击查看
+          </a>
+        </h4>
       </div>
-    </section>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
+          <iframe title="申请截止日期&amp;amp;学校排名一览" aria-label="chart" id="datawrapper-chart-S3SLZ" src="https://datawrapper.dwcdn.net/S3SLZ/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 80% !important; border: none;" height="504"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!--selector-->
+<p style="text-align: center;">点击下列分类查看不同院校，查看详细信息可点击具体院校</p>
+<br>
 <form>
   <select id="selecter" class="form-control" onchange="table();">
       <option value selected disabled>请选择分类</option>
