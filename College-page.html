@@ -5,9 +5,23 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>院校</title>
+  <title>美国</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
+  <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js">
+  </script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.11/c3.min.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.11/c3.min.js"></script>
+  <script src="TileLayer.Grayscale.js"></script>
+ 
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -34,7 +48,7 @@
   <div class="container d-flex align-items-center">
 
     <div class="logo mr-auto">
-      <h1 class="text-light"><a href="index.html"><span><img src="graduate.png"> CollegeBoard</span></a></h1>
+      <h1 class="text-light"><a href="Homepage.html"><span><img src="graduate.png"> CollegeBoard</span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
     </div>
@@ -50,20 +64,38 @@
         <li class="book-a-table text-center"><a href="#footer">Contact Us</a></li>
       </ul>
     </nav><!-- .nav-menu -->
-
   </div>
 </header><!-- End Header -->
 
 
-  <main id="main">
+<main id="main1">
 
-    <section class="inner-page" id="yuanxiao-section">
-      <div class="section-title">
-        <h2>院校 <span>分类</span></h2>
-            <p>点击下列分类查看不同院校，点击具体院校可查看详细信息</p>
+<section class="inner-page" id="yuanxiao-section">
+  <div class="section-title">
+    <h2>所有地区<span>专业分类</span></h2>
+        <p>点击下方图表查看不同院校的排名和中国留学生比率对比</p>
+<!--Graph-->
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <br>点击查看
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <iframe title="各院校排名&amp;amp;中国留学生比率对比" aria-label="chart" id="datawrapper-chart-U2GMj" src="https://datawrapper.dwcdn.net/U2GMj/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 80% !important; border: none;" height="400"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+        </script>
       </div>
-    </section>
+    </div>
+  </div>
+</div>
+</section>
 <!--selector-->
+<p style="text-align: center;">点击下列分类查看不同院校，查看详细信息可点击具体院校</p>
+<br>
 <form>
   <select id="selecter" class="form-control" onchange="table();">
       <option value selected disabled>请选择分类</option>
@@ -91,8 +123,71 @@ var selecter = parent.document.getElementById("selecter");
 </script>
   
 </div>
-  </main><!-- End #main -->
-  <br><br><br><br>
+<br><br>
+<!--Map-->
+<style>
+  #map {
+    height: 300px;
+    margin:0 auto;}
+  </style>
+  <div class="alert-heading">
+    <div class="section-title">
+     <h2><strong >查看院校位置</strong></h2><br>;
+          <form>
+            <div class="form-group" >
+               <select id="filter" class="form-control form-control-sm" align="center" style="width: 500px; display:inline;" onchange="place_marker()">
+                 <option value="" selected disabled>Please select</option>
+                 <option value="0">"University of Washington</option>
+                 <option value="1">The University of Warwick</option>
+                 <option value="2">The Chinese University of Hongkong</option>
+                 <option value="3">National University of Singapore</option>
+                 <option value="4">The University of Hongkong</option>
+                 <option value="5">University of Cambridge</option>
+                 <option value="6">University of Liverpool</option>
+                 <option value="7">University College London</option>
+                 <option value="8">New York University</option>
+                 <option value="9">King's College London</option>
+                 <option value="10">Massachusetts Institute of Technology</option>
+                 <option value="11">Northwestern University</option>
+                 <option value="12">Stanford University</option>
+                 <option value="13">Harvard University</option>
+                 <option value="14">Hongkong Baptist University</option>
+                 <option value="15">Columbia University</option>
+                 <option value="16">University of Leeds</option>
+                 <option value="17">University of York</option>
+                 <option value="18">The London School of Economics and Political Science</option>
+                 <option value="19">Nanyang Technological University</option>
+                 <option value="20">The University of Edinburgh</option>
+                 <option value="21">The University of Sheffield</option>
+                 <option value="22">University of Michigan - Ann Arbor</option>
+                 <option value="23">University of California, Los Angeles</option>
+                 <option value="24">University of Oxford</option>
+                 <option value="25">City University of Hongkong</option>
+                 <option value="26">Imperial College London</option>
+               </select>
+         <button type="button" class="btn btn-outline-primary btn-sm" id="roll_up" onclick="show_districts();">Destinations</button>
+         <button type="button" class="btn btn-outline-primary btn-sm" id="roll_up" onclick="clear_map();" style="
+             border-style: solid;
+             border-width: 1px;
+             border-color: #327ab7;
+         ">Reset</button>
+         <button type="button" class="btn btn-outline-primary btn-sm" id="roll_up" onclick="remove_map();">Remove</button>
+             </div>
+          </form>
+          <div id="map" style="width:80%; height: 300px;" ></div>
+       </div>
+   <!-- end column-->
+   <div class="col-sm-6">
+       <div class="table-responsive">
+           <table id="table3" width="100%" class="table table-bordered"></table>
+   </div><!-- table responsive -->
+   </div><!--end row-->
+   </div>
+<script type="text/javascript" language="javascript" src="院校js.js"></script>
+</body>
+
+</main><!-- End #main -->
+<br><br><br>
    <!-- ======= Footer ======= -->
    <footer id="footer">
     <div class="container">
