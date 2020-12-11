@@ -8,6 +8,20 @@
   <title>美国</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
+  <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js">
+  </script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.11/c3.min.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.11/c3.min.js"></script>
+  <script src="TileLayer.Grayscale.js"></script>
+ 
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -34,7 +48,7 @@
   <div class="container d-flex align-items-center">
 
     <div class="logo mr-auto">
-      <h1 class="text-light"><a href="index.html"><span><img src="graduate.png"> CollegeBoard</span></a></h1>
+      <h1 class="text-light"><a href="Homepage.html"><span><img src="graduate.png"> CollegeBoard</span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
     </div>
@@ -44,7 +58,7 @@
         <li><a href="Homepage.html">主页</a></li>
         <li><a href="College-page.html">院校</a></li>
         <li><a href="Program-page.html">专业</a></li>
-        <li><a href="#footer">申请贴士</a></li>
+        <li><a href="#footer">留学贴士</a></li>
         
 
         <li class="book-a-table text-center"><a href="#book-a-table">Contact Me</a></li>
@@ -131,10 +145,30 @@
       <section class="inner-page" id="yuanxiao-section">
         <div class="section-title">
           <h2>美国地区<span>院校分类</span></h2>
-              <p>点击下列分类查看不同院校，查看详细信息可点击具体院校</p>
+              <p>点击下方图表查看不同院校的对比</p>
+      <!--Graph-->
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <br>点击查看
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+              <iframe title="美国院校分类" aria-label="chart" id="datawrapper-chart-Q2C6G" src="https://datawrapper.dwcdn.net/Q2C6G/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 80% !important; border: none;" height="500"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+              </script>
+              <br> <br> <br>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
+
     <!--selector-->
+    <p style="text-align: center;">点击下列分类查看不同院校，查看详细信息可点击具体院校</p>
     <form>
       <select id="selecter" class="form-control" onchange="table1();">
           <option value selected disabled>请选择分类</option>
@@ -169,6 +203,7 @@
             <p>点击下列分类查看不同专业，查看详细信息可点击具体专业</p>
       </div>
     </section>
+    
   <!--selector-->
    <form>
     <select id="selecter2" class="form-control" onchange="table();">
@@ -189,15 +224,60 @@
        function table(){
            var selecter2 = parent.document.getElementById("selecter2");
                             if (selecter2.value=="0"){document.getElementById("iframe2").src="https://airtable.com/embed/shrLIoMt6YSVJAcsW?backgroundColor=cyanLight&viewControls=on"};
-                            if (selecter2.value=="1"){document.getElementById("iframe2").src="https://airtable.com/embed/shrn3b99GbPDEfCbt?backgroundColor=cyanLight&viewControls=on"};
-                            if (selecter2.value=="2"){document.getElementById("iframe2").src="https://airtable.com/embed/shrap92ssVfslxgpW?backgroundColor=cyanLight&viewControls=on"};
+                            if (selecter2.value=="1"){document.getElementById("iframe2").src="https://airtable.com/embed/shrsLMEzq1d8mR2Rh?backgroundColor=cyanLight&viewControls=on"};
+                            if (selecter2.value=="2"){document.getElementById("iframe2").src="https://airtable.com/embed/shrdT63S6i4gZbspH?backgroundColor=cyanLight&viewControls=on"};
                             }
      </script>
     
    </div>
-   </main><!-- End #main -->
 
+  <br><br>
+  <!--Map-->
+  <style>
+    #map {
+      height: 300px;
+      margin:0 auto;}
+    </style>
+    <div class="alert-heading">
+      <div class="section-title">
+       <h2><strong >美国地区院校地图</strong></h2>&#10;
+            <form>
+              <div class="form-group" >
+                 <select id="filter" class="form-control form-control-sm" align="center" style="width: 500px; display:inline;" onchange="place_marker()">
+                   <option value="" selected disabled>Please select</option>
+                   <option value="0">Massachusetts Institute of Technology</option>
+                   <option value="1">University of California, Los Angeles</option>
+                   <option value="2">University of Washington</option>
+                   <option value="3">University of Michigan - Ann Arbor</option>
+                   <option value="4">Columbia University</option>
+                   <option value="5">Northwestern University</option>
+                   <option value="6">Harvard University</option>
+                   <option value="7">Stanford University</option>
+                   <option value="8">New York University</option>
+                 </select>
+           <button type="button" class="btn btn-outline-primary btn-sm" id="roll_up" onclick="show_districts();">Destinations</button>
+           <button type="button" class="btn btn-outline-primary btn-sm" id="roll_up" onclick="clear_map();" style="
+               border-style: solid;
+               border-width: 1px;
+               border-color: #327ab7;
+           ">Reset</button>
+           <button type="button" class="btn btn-outline-primary btn-sm" id="roll_up" onclick="remove_map();">Remove</button>
+               </div>
+            </form>
+            <div id="map" style="width:80%; height: 300px;" ></div>
+         </div>
+     <!-- end column-->
+     <div class="col-sm-6">
+         <div class="table-responsive">
+             <table id="table3" width="100%" class="table table-bordered"></table>
+     </div><!-- table responsive -->
+     </div><!--end row-->
+     </div>
+<script type="text/javascript" language="javascript" src="美国js.js"></script>
+</body>
 
+</main><!-- End #main -->
+<br><br><br>
      <!-- ======= Footer ======= -->
      <footer id="footer">
       <div class="container">
