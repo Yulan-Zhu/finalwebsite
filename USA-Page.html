@@ -145,14 +145,13 @@
       <section class="inner-page" id="yuanxiao-section">
         <div class="section-title">
           <h2>美国地区<span>院校分类</span></h2>
-              <p>点击下方图表查看不同院校的对比</p>
       <!--Graph-->
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
           <div class="panel-heading" role="tab" id="headingTwo">
             <h4 class="panel-title">
               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <br>点击查看
+                <br>点击查看院校对比
               </a>
             </h4>
           </div>
@@ -160,17 +159,15 @@
             <div class="panel-body">
               <iframe title="美国院校分类" aria-label="chart" id="datawrapper-chart-Q2C6G" src="https://datawrapper.dwcdn.net/Q2C6G/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 80% !important; border: none;" height="500"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
               </script>
-              <br> <br> <br>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
+<center><br>
     <!--selector-->
-    <p style="text-align: center;">点击下列分类查看不同院校，查看详细信息可点击具体院校</p>
+    <p style="text-align: center;">点击下列分类查看不同院校，查看详细信息可点击具体院校</p><br>
     <form>
-      <select id="selecter" class="form-control" onchange="table1();">
+      <select id="selecter" class="form-control" onchange="table1();"style="width:30%">
           <option value selected disabled>请选择分类</option>
           <option value="0">全部院校</option>
           <option value="1">按照QS排名</option>
@@ -178,10 +175,10 @@
       </select>
     </form>
     <br>
-    
+    <p style="text-align: center;">点击图表右上方的搜索按钮，可输入具体的专业名称完成精准搜索</p><br>
     <!--airtable-->
      <div id="table1">
-      <iframe id="iframe1" iframe class="airtable-embed" src="https://airtable.com/embed/shrIYdRFfrhhrlwQ7?backgroundColor=cyanLight&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+      <iframe id="iframe1" iframe class="airtable-embed" src="https://airtable.com/embed/shrIYdRFfrhhrlwQ7?backgroundColor=cyanLight&viewControls=on" frameborder="0" onmousewheel="" width="80%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
      </div>
     
     <script>
@@ -192,21 +189,21 @@
                               if (selecter.value=="2"){document.getElementById("iframe1").src="https://airtable.com/embed/shr1TGjqHGfVAteSm?backgroundColor=cyanLight&viewControls=on"};
                               }
     </script>
-      
+      </section>
     </div>
    </main><!-- End #main -->
+  </center>
+  <center>
    <main id="main2">
 
     <section class="inner-page" id="yuanxiao-section2">
       <div class="section-title">
         <h2>美国地区<span>专业分类</span></h2>
-            <p>点击下列分类查看不同专业，查看详细信息可点击具体专业</p>
-      </div>
-    </section>
-    
+            <p>点击下列分类查看不同专业，查看详细信息可点击具体专业</p><br>
   <!--selector-->
    <form>
-    <select id="selecter2" class="form-control" onchange="table();">
+    <center> 
+    <select id="selecter2" class="form-control" onchange="table();" style="width: 30%;">
         <option value selected disabled>请选择专业分类</option>
         <option value="0">全部专业</option>
         <option value="1">按照学费</option>
@@ -214,10 +211,10 @@
     </select>
    </form>
    <br>
-  
+   <p style="text-align: center;">点击图表右上方的搜索按钮，可输入具体的专业名称完成精准搜索</p><br>
   <!--airtable-->
     <div id="table2">
-    <iframe id="iframe2" iframe class="airtable-embed" src="https://airtable.com/embed/shrLIoMt6YSVJAcsW?backgroundColor=cyanLight&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    <iframe id="iframe2" iframe class="airtable-embed" src="https://airtable.com/embed/shrLIoMt6YSVJAcsW?backgroundColor=cyanLight&viewControls=on" frameborder="0" onmousewheel="" width="80%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
   </div>
   
      <script>
@@ -228,9 +225,9 @@
                             if (selecter2.value=="2"){document.getElementById("iframe2").src="https://airtable.com/embed/shrdT63S6i4gZbspH?backgroundColor=cyanLight&viewControls=on"};
                             }
      </script>
-    
+      </section>
    </div>
-
+  </center>
   <br><br>
   <!--Map-->
   <style>
