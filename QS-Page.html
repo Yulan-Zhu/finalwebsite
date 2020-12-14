@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>院校</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
+  <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js">
+  </script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.11/c3.min.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.11/c3.min.js"></script>
+  <script src="TileLayer.Grayscale.js"></script>
+ 
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+ <!-- ======= Header ======= -->
+ <header id="header" class="d-flex align-items-center">
+  <div class="container d-flex align-items-center">
+
+    <div class="logo mr-auto">
+      <h1 class="text-light"><a href="Homepage.html"><span><img src="graduate.png"> CollegeBoard</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    </div>
+
+    <nav class="nav-menu d-none d-lg-block">
+      <ul>
+        <li><a href="Homepage.html">主页</a></li>
+        <li class="active"><a href="College-page.html">院校</a></li>
+        <li><a href="Program-page.html">专业</a></li>
+        <li><a href="#specials">留学贴士</a></li>
+        
+
+        <li class="book-a-table text-center"><a href="#footer">Contact Us</a></li>
+      </ul>
+    </nav><!-- .nav-menu -->
+  </div>
+</header><!-- End Header -->
+
+
+<main id="main1">
+
+    <section class="inner-page" id="yuanxiao-section">
+      <div class="section-title">
+        <h2>所有地区<span>专业分类</span></h2>
+    <!--Graph-->
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingTwo">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <br>点击查看院校对比
+            </a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            <iframe title="各院校排名&amp;amp;中国留学生比率对比" aria-label="chart" id="datawrapper-chart-U2GMj" src="https://datawrapper.dwcdn.net/U2GMj/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 80% !important; border: none;" height="400"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--selector-->
+    <br>
+    <p style="text-align: center;">点击选择不同排列方式，查看详细信息可点击具体院校</p>
+    <br>
+    <form>
+        <center>
+      <select id="selecter" class="form-control" onchange="table()"; style="width:30%;">
+        
+          <option value selected disabled> 请选择分类</p></option>
+          <option value="0">全部院校</option>
+          <option value="1">按照地区</option>
+          <option value="2">QS排名</option>
+          <option value="3">中国留学生比率</option>
+      </select>
+    </form>
+    <br>
+    <p style="text-align: center;">点击下列图表右上方的搜索按钮，可输入具体的专业名称完成精准搜索</p><br>
+    <!--airtable--> <div id="table">
+  <iframe id="iframe" iframe class="airtable-embed" src="https://airtable.com/embed/shr4HZ5gyX2JYgWCg?backgroundColor=cyanLight&viewControls=on" frameborder="0" onmousewheel="" width="90%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+</iframe>
+</div>
+<script>
+  function table(){
+var selecter = parent.document.getElementById("selecter");
+                          if (selecter.value=="0"){document.getElementById("iframe").src="https://airtable.com/embed/shrxBIzUpkVT9YnnP?backgroundColor=cyanLight&viewControls=on"};
+                          if (selecter.value=="1"){document.getElementById("iframe").src="https://airtable.com/embed/shrCi0nYDcrdLy2Ve?backgroundColor=cyanLight&viewControls=on"};
+                          if (selecter.value=="2"){document.getElementById("iframe").src="https://airtable.com/embed/shr4HZ5gyX2JYgWCg?backgroundColor=cyanLight&viewControls=on"};
+                          if (selecter.value=="3"){document.getElementById("iframe").src="https://airtable.com/embed/shrIyODYblIsjgJ7S?backgroundColor=cyanLight&viewControls=on"};
+                          }
+</script>
+</center>
+</section>
+</div>
+<br><br>
+<!--Map-->
+<style>
+  #map {
+    height: 300px;
+    margin:0 auto;}
+  </style>
+  <div class="alert-heading">
+    <div class="section-title">
+     <h2><strong >查看院校位置</strong></h2><br>;
+          <form>
+            <div class="form-group" >
+               <select id="filter" class="form-control form-control-sm" align="center" style="width: 500px; display:inline;" onchange="place_marker()">
+                 <option value="" selected disabled>Please select</option>
+                 <option value="0">"University of Washington</option>
+                 <option value="1">The University of Warwick</option>
+                 <option value="2">The Chinese University of Hongkong</option>
+                 <option value="3">National University of Singapore</option>
+                 <option value="4">The University of Hongkong</option>
+                 <option value="5">University of Cambridge</option>
+                 <option value="6">University of Liverpool</option>
+                 <option value="7">University College London</option>
+                 <option value="8">New York University</option>
+                 <option value="9">King's College London</option>
+                 <option value="10">Massachusetts Institute of Technology</option>
+                 <option value="11">Northwestern University</option>
+                 <option value="12">Stanford University</option>
+                 <option value="13">Harvard University</option>
+                 <option value="14">Hongkong Baptist University</option>
+                 <option value="15">Columbia University</option>
+                 <option value="16">University of Leeds</option>
+                 <option value="17">University of York</option>
+                 <option value="18">The London School of Economics and Political Science</option>
+                 <option value="19">Nanyang Technological University</option>
+                 <option value="20">The University of Edinburgh</option>
+                 <option value="21">The University of Sheffield</option>
+                 <option value="22">University of Michigan - Ann Arbor</option>
+                 <option value="23">University of California, Los Angeles</option>
+                 <option value="24">University of Oxford</option>
+                 <option value="25">City University of Hongkong</option>
+                 <option value="26">Imperial College London</option>
+               </select>
+         <button type="button" class="btn btn-outline-primary btn-sm" id="roll_up" onclick="show_districts();">查看所有</button>
+         <button type="button" class="btn btn-outline-primary btn-sm" id="roll_up" onclick="clear_map();" style="
+             border-style: solid;
+             border-width: 1px;
+             border-color: #327ab7;
+         ">返回重设</button>
+         <button type="button" class="btn btn-outline-primary btn-sm" id="roll_up" onclick="remove_map();">清除地图</button>
+             </div>
+          </form>
+          <div id="map" style="width:80%; height: 300px;" ></div>
+       </div>
+   <!-- end column-->
+   <div class="col-sm-6">
+       <div class="table-responsive">
+           <table id="table3" width="100%" class="table table-bordered"></table>
+   </div><!-- table responsive -->
+   </div><!--end row-->
+   </div>
+<script type="text/javascript" language="javascript" src="院校js.js"></script>
+</body>
+
+</main><!-- End #main -->
+<br><br><br>
+   <!-- ======= Footer ======= -->
+   <footer id="footer">
+    <div class="container">
+      <footer class="site-footer site-bg-dark site-section">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4 site-animate fadeInUp site-animated">
+                </div>
+                <div class="col-md-1"></div>
+      <div class="credits">
+      </div>
+    </div>
+  </footer>
+ <footer class="site-footer site-bg-dark site-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-3 site-animate fadeInUp site-animated">
+            <h2 class="site-heading-2" style="font-size: 16px;"><img src="graduate.png" style="height: 15%;width:15%">CollegeBoard</h2>
+            <p style="padding-top: 1rem;">CollegeBoard-Get Your Dreams Closer. CollegeBoard 希望能给广大中国传媒学子整合出有用的信息，帮助你们择校择专业，为你们的留学深造提供指南。</p>
+          </div>
+          <div class="col-md-1"></div>
+
+        
+          <div class="col-md-2 site-animate fadeInUp site-animated">
+            <div class="site-footer-widget mb-4">
+           <a class="py-2 d-block">
+               <h2 class="site-heading-2" style="font-size: 16px;">CollegeBoard</h2>
+               </a>
+             <ul class="list-unstyled">
+               <li><a href="Homepage.html" class="py-2 d-block">地区分类</a></li>
+               <li><a href="College-page.html" class="py-2 d-block">院校分类</a></li>
+               <li><a href="Program-page.html" class="py-2 d-block">专业分类</a></li>
+               <li><a href="Homepage.html" class="py-2 d-block">留学贴士</a></li>
+             </ul>
+           </div>
+         </div>
+
+          <div class="col-md-2 site-animate fadeInUp site-animated">
+             <div class="site-footer-widget mb-4">
+            <a class="py-2 d-block">
+                <h2 class="site-heading-2" style="font-size: 16px;">相关网站</h2>
+                </a>
+              <ul class="list-unstyled">
+                <li><a href="https://china.usembassy-china.org.cn/zh/visas-zh/" class="py-2 d-block">美国签证官网</a></li>
+                <li><a href="https://www.gov.uk/government/publications/apply-for-a-uk-visa-in-china/--2" class="py-2 d-block">英国签证官网</a></li>
+                <li><a href="https://www.immd.gov.hk/hks/services/visas/study.html" class="py-2 d-block">香港签证官网</a></li>
+                <li><a href="https://www.mfa.gov.sg/Overseas-Mission/Beijing/CN/Beijing-CN/Consular-Services/Visa-Information" class="py-2 d-block">新加坡签证官网</a></li>
+                <li><a href="https://ielts.neea.cn/" class="py-2 d-block">雅思考试官网</a></li>
+                <li><a href="https://toefl.neea.cn/" class="py-2 d-block">托福考试官网</a></li>
+                <li><a href="http://gre-main.neea.cn/" class="py-2 d-block">GRE考试官网</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-3 site-animate fadeInUp site-animated">
+             <div class="site-footer-widget mb-4">
+            <a class="py-2 d-block">
+                <h2 class="site-heading-2"  style="font-size: 16px;">联系方式</h2>
+                </a>
+              <ul class="list-unstyled">
+                <li class="py-2 d-block">邮箱：</li>
+                <li class="py-2 d-block">zhu_yulan@sina.cn</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer><!-- End Footer -->
+
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
